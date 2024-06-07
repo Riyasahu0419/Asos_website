@@ -124,7 +124,7 @@ function Footer() {
 {/* footer */}
   <footer className="bg-[#EEEEEE]">
 
-  <div className="mx-auto w-full max-w-screen-xl"/>
+  
     <div className="grid grid-cols-2 gap-8 lg:py-8 md:grid-cols-4 ml-28">
       <div className='hidden md:block '>
         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase ">HELP & INFORMATION</h2>
@@ -196,62 +196,61 @@ function Footer() {
           </ul>
             <p className='text-xs'>Some of our international sites:</p>
             
-          <br />
+       
+          <div className='flex flex-wrap lg:gap-8 lg:mt-4 gap-2 py-2'>
 
-
-          <ul className='flex gap-4'>
-
-
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin "><img src="https://assets.asosservices.com/storesa/images/flags/es.png" alt="Spain" className='w-4 h-4 ' /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/de.png" alt="Germany" className='w-4 h-4 ' /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/au.png" alt="Australia" className='w-4 h-4 '  /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/fr.png" alt="France" className='w-4 h-4 ' /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/us.png" alt="United States" className='w-4 h-4 ' /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/dk.png" alt="Denmark" className='w-4 h-4 ' /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/it.png" alt="Italy" className='w-4 h-4 ' /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/nl.png" alt="Netherlands" className='w-4 h-4 '  /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/pl.png" alt="Poland" className='w-4 h-4 '  /></a>
-          </li>
-          <li className="mb-4">
-            <a href="#" className="hover:text-blue-800  font-thin"><img src="https://assets.asosservices.com/storesa/images/flags/se.png" alt="Sweden" className='w-4 h-4 '  /></a>
-          </li>
-        </ul>
+          
+            <a href="#" ><img src="https://assets.asosservices.com/storesa/images/flags/es.png" alt="Spain" className='w-4 h-4 ' /></a>
+          
+          
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/de.png" alt="Germany" className='w-4 h-4 ' /></a>
+          
+          
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/au.png" alt="Australia" className='w-4 h-4 '  /></a>
+          
+          
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/fr.png" alt="France" className='w-4 h-4 ' /></a>
+         
+         
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/us.png" alt="United States" className='w-4 h-4 ' /></a>
+         
+         
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/dk.png" alt="Denmark" className='w-4 h-4 ' /></a>
+          
+            
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/it.png" alt="Italy" className='w-4 h-4 ' /></a>
+         
+         
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/nl.png" alt="Netherlands" className='w-4 h-4 '  /></a>
+         
+         
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/pl.png" alt="Poland" className='w-4 h-4 '  /></a>
+          
+          
+            <a href=""><img src="https://assets.asosservices.com/storesa/images/flags/se.png" alt="Sweden" className='w-4 h-4 '  /></a>
+         
+          </div>
+         
+      
       </div>
     </div>
     
 
-    <div className='bg-[#DDDDDD] flex gap-2 justify-end h-14 text-xs' >
-      <p className='mr-auto ml-36 mt-5'>© 2024 ASOS</p>
-      <ul className='flex  mr-36 mt-5 gap-3' >
-        <li>
+    <div className='bg-[#DDDDDD] flex gap-2 justify-between h-14 text-xs px-2' >
+      <p className='lg:mr-auto lg:ml-36 mt-5'>© 2024 ASOS</p>
+      <div className='flex  lg:mr-36 mt-5 gap-3' >
+        
           <a href="">Privacy &amp; Cookies</a>
-        </li>
 
-          <li>
+          <div className="h-3 border-l-2 border-gray-400 mt-1"></div>
+        
             <a href="">Ts&amp;Cs</a>
-          </li>
 
-            <li>
-              <a href="">Accessibility</a>
-              </li>
-          </ul>
+            <div className="h-3 border-l-2 border-gray-400 mt-1 hidden md:block "></div>
+          
+              <a href="" className='hidden md:block'>Accessibility </a>
+            
+          </div>
           </div>
 
     </footer>
