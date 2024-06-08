@@ -110,7 +110,7 @@ function Product() {
 
     <div className=' w-[70%] grid  grid-cols-2  lg:grid-cols-4 m-auto ' >
 
-    { product.map((e,id)=>{
+    {Array.isArray(product) && product.map((e,id)=>{
         return(
           
      <Link to={`/productdetail/${e.id}`}>
