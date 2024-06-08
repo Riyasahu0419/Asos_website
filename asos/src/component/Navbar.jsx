@@ -157,7 +157,9 @@ export default function Navbar(){
     <div className="flex relative   mr-28 gap-5  items-center justify-center">
 
     <div className="ml-20 lg:ml-0">
+      <Link >
       <IoSearchOutline size={25} className="  text-white  md:hidden block"  />
+      </Link>
     </div>
 
       <div className=" " >

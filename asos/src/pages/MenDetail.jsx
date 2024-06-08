@@ -11,7 +11,7 @@ function MenDetail() {
     
       // console.log(product)
     async function fetchproduct(id){
-        let res = await axios.get(`http://localhost:3000/Men${id}`)
+        let res = await axios.get(`http://localhost:3000/Men/${id}`)
         // let data = await res.json()
         setProduct(res.data)
         console.log(res)
