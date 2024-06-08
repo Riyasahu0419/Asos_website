@@ -86,10 +86,11 @@ function Product() {
             onChange={(e) => setCategory(e.target.value)}
           >
            
+           <option value="">select category</option>
            <option value="suits">Suits</option>
             <option value="shorts">Shorts</option>
             <option value="shirt">Shirt</option>
-            <option value="T-shirt">T-Shirt</option>
+            <option value="T-shirts">T-Shirt</option>
             <option value="Knitwear & Sweats">Knitwear & Sweats</option>
             <option value="Vests">Vests</option>
             <option value="belts">Belts</option>
