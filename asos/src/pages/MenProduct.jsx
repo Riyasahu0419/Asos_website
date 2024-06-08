@@ -1,21 +1,48 @@
+
+
+
 import React, { useEffect, useState } from 'react'
 import { Card,Text, Image, CardBody, Stack} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-function MenProduct() {
-    const[product,setProduct]=useState([])
-    
+function Product() {
+  const [product, setProduct] = useState([]);
+  const [filteredProduct, setFilteredProduct] = useState([]);
+  const [sort, setSort] = useState("");
+  const [category, setCategory] = useState("");
 
-    async function fetchproduct(){
-        let res = await fetch("http://localhost:3000/Men")
-        let data = await res.json()
-        setProduct(data)
-        console.log(data)
+  useEffect(() => {
+    fetchProduct();
+  }, []);
+
+  async function fetchProduct() {
+    let url = `https://mercurial-midnight-rainbow.glitch.me/Men`;
+    let res = await axios.get(url);
+    setProduct(res.data);
+    setFilteredProduct(res.data); // Set filtered product to all products initially
+  }
+
+  useEffect(() => {
+    if (category) {
+      const newCategory = product.filter((el) => el.category === category);
+      setFilteredProduct(newCategory);
+    } else {
+      setFilteredProduct(product);
     }
+  }, [category, product]);
 
-useEffect(()=>{
-        fetchproduct()
-},[])
+  useEffect(() => {
+    if (sort) {
+      if (sort === "asc") {
+        const sortedProduct = [...filteredProduct].sort((a, b) => a.price - b.price);
+        setFilteredProduct(sortedProduct);
+      } else if (sort === "desc") {
+        const sortedProduct = [...filteredProduct].sort((a, b) => b.price - a.price);
+        setFilteredProduct(sortedProduct);
+      }
+    }
+  }, [sort, filteredProduct]);
 
 
   return (
@@ -58,10 +85,8 @@ useEffect(()=>{
             id="category"
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="">Select Category</option>
            
-           
-            <option value="suits">Suits</option>
+           <option value="suits">Suits</option>
             <option value="shorts">Shorts</option>
             <option value="shirt">Shirt</option>
             <option value="T-shirt">T-Shirt</option>
@@ -72,25 +97,25 @@ useEffect(()=>{
             
           </select>
         </div>
-        </div>
-        </div>
 
-      
-
-
-
+      </div>
+     
+    </div>
+ 
+ 
     <div className=' w-[70%] grid  grid-cols-2  lg:grid-cols-4 m-auto ' >
 
-    {product.map((e,id)=>{
+    {filteredProduct.map((e,id)=>{
         return(
-     <Link to={`/mendetail/${e.id}`}>
+          
+     <Link to={`/productdetail/${e.id}`}>
     <Card maxW='sm' w="90%" mt="18"  >
     <CardBody>
     <Image
-      src={e.img} alt=''  h="350px"   />
+      src={e.img} alt=''  h="350px"  />
     <Stack>
       <Text>{e.title}</Text>
-      <Text fontWeight="bold">{e.price}</Text>
+      <Text fontWeight="bold">Price: {e.price}</Text>
     </Stack>
   </CardBody>
     </Card>
@@ -108,15 +133,7 @@ useEffect(()=>{
   )
 }
 
-export default MenProduct
-
-
-
-
-
-
-
-
+export default Product
 
 
 

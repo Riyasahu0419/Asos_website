@@ -1,37 +1,49 @@
 import React, { useEffect, useState } from 'react'
 import { Card,Text, Image, CardBody, Stack} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 function Product() {
-    const[product,setProduct]=useState([])
-    const[sort , setSort] = useState("")
-    const[category , setCategory]= useState("")
+  const [product, setProduct] = useState([]);
+  const [filteredProduct, setFilteredProduct] = useState([]);
+  const [sort, setSort] = useState("");
+  const [category, setCategory] = useState("");
 
-    console.log(product)
+  useEffect(() => {
+    fetchProduct();
+  }, []);
 
-    useEffect(() => {
-      fetchProduct();
-    }, [category]);
-  
-    async function fetchProduct() {
-      let url = `http://localhost:3000/women`;
-      if (category) {
-        url += `&_filter=category,${category}`;
-      }
-      // if (sort) {
-      //   url += `&_sort=price&_order=${sort}`;
-      // }
-      let res = await fetch(url);
-      let data = await res.json();
-      setProduct(data);
+  async function fetchProduct() {
+    let url = `https://mercurial-midnight-rainbow.glitch.me/women`;
+    let res = await axios.get(url);
+    setProduct(res.data);
+    setFilteredProduct(res.data); // Set filtered product to all products initially
+  }
+
+  useEffect(() => {
+    if (category) {
+      const newCategory = product.filter((el) => el.category === category);
+      setFilteredProduct(newCategory);
+    } else {
+      setFilteredProduct(product);
     }
+  }, [category, product]);
+
+  useEffect(() => {
+    if (sort) {
+      if (sort === "asc") {
+        const sortedProduct = [...filteredProduct].sort((a, b) => a.price - b.price);
+        setFilteredProduct(sortedProduct);
+      } else if (sort === "desc") {
+        const sortedProduct = [...filteredProduct].sort((a, b) => b.price - a.price);
+        setFilteredProduct(sortedProduct);
+      }
+    }
+  }, [sort, filteredProduct]);
+
 
   return (
     <>
-
-
-    
-
 
 <div className="container  ">
       <h1 className="text-3xl font-bold text-center mb-5">Topshop New In</h1>
@@ -71,46 +83,24 @@ function Product() {
             onChange={(e) => setCategory(e.target.value)}
           >
             <option value="">Select Category</option>
-            <option value="dresses">Dresses</option>
             <option value="top">Top</option>
             <option value="shorts">Shorts</option>
             <option value="shirt">Shirt</option>
             <option value="jeans">Jeans</option>
             <option value="all in one">All in one</option>
+            <option value="dresses">Dresses</option>
             
           </select>
         </div>
-{/*         
-        
-        <div className="col-span-1">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="color"
-          >
-            Colour
-          </label>
-          <select
-            className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="color">
-            <option value="">Select Colour</option>
-            <option value="black">Black</option>
-            <option value="blue">Blue</option>
-            <option value=""></option>
-            <option value=""></option>
-            
-          </select>
-        </div> */}
+
       </div>
      
     </div>
  
  
-
-
-
     <div className=' w-[70%] grid  grid-cols-2  lg:grid-cols-4 m-auto ' >
 
-    {Array.isArray(product) && product.map((e,id)=>{
+    {filteredProduct.map((e,id)=>{
         return(
           
      <Link to={`/productdetail/${e.id}`}>
@@ -120,7 +110,7 @@ function Product() {
       src={e.img} alt=''  h="350px"  />
     <Stack>
       <Text>{e.title}</Text>
-      <Text fontWeight="bold">{e.price}</Text>
+      <Text fontWeight="bold">Price: {e.price}</Text>
     </Stack>
   </CardBody>
     </Card>

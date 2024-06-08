@@ -11,7 +11,7 @@ function ProductDetail() {
     
       // console.log(product)
     async function fetchproduct(id){
-        let res = await axios.get(`http://localhost:3000/women/${id}`)
+        let res = await axios.get(`https://mercurial-midnight-rainbow.glitch.me/women/${id}`)
         // let data = await res.json()
         setProduct(res.data)
         console.log(res)
@@ -36,7 +36,7 @@ useEffect(()=>{
     </div>
     <div className="w-full md:w-1/2 p-4">
       <h1 className="text-2xl font-bold mb-2">{product.title}</h1>
-      <p className="text-xl text-gray-700 mb-4">{product.price}</p>
+      <p className="text-xl text-gray-700 mb-4">Price: {product.price}</p>
       <div className="bg-blue-100 p-2 mb-4">
         <p className="text-blue-600">This item is excluded from discount codes.</p>
       </div>
