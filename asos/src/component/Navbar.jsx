@@ -73,15 +73,20 @@ export default function Navbar(){
 </div>
 
 {Menu &&(
-  <div className="bg-white w-56 md:hidden block ">
+  <div className=" bg-white w-56 md:hidden block ">
 
+    <div className="flex">
+
+    <Link to='/women' className="m-2">HOME</Link>
+    <div className="  h-4 border-l-2 border-gray-400 mt-3 "></div>
+    <Link to='/women' className="m-2">WOMEN</Link>
+
+    <div className="  h-4 border-l-2 border-gray-400 mt-3 "></div>
     
-    <Link to='/women' className="">WOMEN</Link>
-    
-    <Link to='/men' className=""> MEN</Link>
-    <br />
-    <Link to='/women'>HOME</Link>
-  <div className="text-center bg-custom-yellow ">
+    <Link to='/men' className="m-2"> MEN</Link>
+    </div>
+  
+  {/* <div className="text-center bg-custom-yellow ">
   <Link className="mt-4 inline-block"> UP TO 30% OFF TEES, SHORTS AND MORE! </Link>
   </div>
 
@@ -104,11 +109,11 @@ export default function Navbar(){
   <Link className="mt-4">Sportswear</Link>
   <br />
   <Link className="mt-4">Topshop</Link>
-  <Link className="mt-4">Sale</Link>
+  <Link className="mt-4">Sale</Link> */}
 
-  <li className="mb-4 ">
+  {/* <li className="mb-4 ">
     <a href="#" className=" hover:text-blue-500  flex gap-4"> You're in  <img src="https://assets.asosservices.com/storesa/images/flags/in.png" alt="" className='w-4 h-4 ' /> <div className="h-4 border-l-2 border-gray-500"></div><h2 className='font-semibold' > CHANGE</h2></a>
-    </li>
+    </li> */}
   </div>
 )}
 
