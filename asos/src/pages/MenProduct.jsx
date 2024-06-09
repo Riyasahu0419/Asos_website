@@ -130,7 +130,7 @@ function Product() {
           {filteredProduct.map((e, id) => {
             return (
 
-              <Link to={`/productdetail/${e.id}`}>
+              <Link to={`/mendetail/${e.id}`}>
                 <Card maxW='sm' w="90%" mt="18"  >
                   <CardBody>
                     <Image
