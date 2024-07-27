@@ -114,10 +114,10 @@ npm start
    cd asos-website
 ``
 
-Contact
+# Contact
 If you have any questions or feedback, feel free to reach out.
 
-Email: riyasahu678876@gmail.com
+## Email: riyasahu678876@gmail.com
 Thank you for visiting the ASOS website repository! Happy coding!
 
 
