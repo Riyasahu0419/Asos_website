@@ -34,9 +34,10 @@ The ASOS website is a modern and responsive web application designed to mimic th
  
   
 - **Other Tools and Libraries**:
-  - Axios (for API calls)
-  - React Router (for navigation)
- 
+ ```
+   Axios (for API calls)
+   React Router (for navigation)
+ ```
   
 
 ## Getting Started
@@ -45,8 +46,8 @@ The ASOS website is a modern and responsive web application designed to mimic th
 
 Ensure you have the following installed on your local machine:
 ```
-- Node.js
-- npm or yarn
+Node.js
+npm or yarn
 ```
 
 
@@ -64,18 +65,19 @@ Install dependencies for the frontend and backend:
 
 
 # For frontend
--cd client
--npm install
-
+```
+cd client
+npm install
+```
 # For backend
 ```
--cd ../server
--npm install
+cd ../server
+npm install
 ```
 # Configuration
 ## Backend Configuration:
 
-# #Create a .env file in the server directory.
+## Create a .env file in the server directory.
 # Add the following environment variables:
 
 
