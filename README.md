@@ -52,11 +52,63 @@ Ensure you have the following installed on your local machine:
 
 ### Installation
 
+Installation
+Clone the repository:
+
+
+
+git clone https://github.com/yourusername/asos-website.git
+cd asos-website
+Install dependencies for the frontend and backend:
+
+
+
+# For frontend
+-cd client
+-npm install
+
+# For backend
+-cd ../server
+-npm install
+##Configuration
+#Backend Configuration:
+
+##Create a .env file in the server directory.
+#Add the following environment variables:
+
+
+
+
+--PORT=5000
+```MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+
+   ```
+##Frontend Configuration:
+
+Create a .env file in the client directory if needed for API endpoints.
+-Running the Application
+-Start the backend server:
+
+
+``
+cd server
+npm start
+``
+##Start the frontend development server:
+
+
+```
+cd client
+npm start
+```
+##The frontend will typically be available at http://localhost:3000 and the backend at http://localhost:5000.
+
 1. **Clone the repository:**
-   ```sh
+   ```
    git clone https://github.com/yourusername/asos-website.git
    cd asos-website
-
+``
 
 Contact
 If you have any questions or feedback, feel free to reach out.
