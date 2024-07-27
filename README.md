@@ -44,10 +44,10 @@ The ASOS website is a modern and responsive web application designed to mimic th
 ### Prerequisites
 
 Ensure you have the following installed on your local machine:
-
+```
 - Node.js
 - npm or yarn
-
+```
 
 
 ### Installation
@@ -68,19 +68,21 @@ Install dependencies for the frontend and backend:
 -npm install
 
 # For backend
+```
 -cd ../server
 -npm install
-##Configuration
-#Backend Configuration:
+```
+# Configuration
+## Backend Configuration:
 
-##Create a .env file in the server directory.
-#Add the following environment variables:
+# #Create a .env file in the server directory.
+# Add the following environment variables:
 
 
+```
 
-
---PORT=5000
-```MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 
    ```
