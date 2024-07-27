@@ -22,30 +22,22 @@ The ASOS website is a modern and responsive web application designed to mimic th
 - **Frontend**:
   - HTML5
   - CSS3
-  - JavaScript (ES6+)
+  - Tailwind
   - React.js
-  - Redux (for state management)
   - Styled Components (for styling)
   
-- **Backend**:
-  - Node.js
-  - Express.js
-
-- **Database**:
-  - MongoDB (using Mongoose for ODM)
-
 - **Authentication**:
   - JWT (JSON Web Tokens) for secure authentication
 
 - **Deployment**:
   - Vercel (for frontend)
-  - Heroku (for backend)
-
+ 
+  
 - **Other Tools and Libraries**:
   - Axios (for API calls)
   - React Router (for navigation)
-  - Formik and Yup (for form validation)
-  - Bcrypt (for password hashing)
+ 
+  
 
 ## Getting Started
 
@@ -55,7 +47,8 @@ Ensure you have the following installed on your local machine:
 
 - Node.js
 - npm or yarn
-- MongoDB
+
+
 
 ### Installation
 
