@@ -8,7 +8,7 @@ const app = express();
 
 // CORS settings
 const corsOptions = {
-  origin: ['https://asos-fashion-store-mern.vercel.app', 'http://localhost:5173'], // Allow both your deployed app and localhost
+  origin: ['https://asos-website-client.vercel.app/', 'http://localhost:5173'], // Allow both your deployed app and localhost
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   credentials: true,
 };
